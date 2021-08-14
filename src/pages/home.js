@@ -1,7 +1,17 @@
 import React from 'react';
+import { Col, Grid, Row } from 'rsuite';
+import Sidebar from '../components/Sidebar';
 
-const home = () => {
-  return <div>home</div>;
+const Home = () => {
+  return (
+    <Grid fluid className="h-100">
+      <Row>
+        <Col xs={24} md={8}>
+          <Sidebar />
+        </Col>
+      </Row>
+    </Grid>
+  );
 };
 
-export default home;
+export default Home;

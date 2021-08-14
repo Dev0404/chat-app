@@ -8,7 +8,7 @@ export const ProfileProvider = ({ children }) => {
 
   useEffect(() => {
     let userRef;
-    const authUnsub = auth.onAuthStateChanged(authObj => {
+    const authUnsub = auth.onAuthStateChanged(async authObj => {
       if (authObj) {
         userRef = database.ref(`/profiles/${authObj.uid}`);
         userRef.on('value', snap => {
