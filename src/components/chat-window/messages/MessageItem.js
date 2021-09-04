@@ -19,7 +19,10 @@ const renderFileMessage = file => {
     );
   }
 
-  if (file.contentType.includes('audio')) {
+  if (
+    file.contentType.includes('audio') ||
+    file.contentType.includes('octet-stream')
+  ) {
     return (
       // eslint-disable-next-line jsx-a11y/media-has-caption
       <audio controls>
@@ -89,7 +92,7 @@ const MessageItem = ({ message, handleAdmin, handleLike, handleDelete }) => {
             isVisible={canShowIcons}
             iconName="close"
             tooltip="Delete this message"
-            onClick={() => handleDelete(message.id)}
+            onClick={() => handleDelete(message.id, file)}
           />
         )}
       </div>

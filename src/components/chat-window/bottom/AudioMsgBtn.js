@@ -22,6 +22,7 @@ const AudioMsgBtn = ({ afterUpload }) => {
           .child(`audio_${Date.now()}.mp3`)
           .put(data.blob, {
             cacheControl: `Public, max-age=${3600 * 24 * 3} `,
+            contentType: 'audio/mp3',
           });
 
         const file = {
